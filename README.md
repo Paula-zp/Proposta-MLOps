@@ -40,9 +40,11 @@ Esse módulo já existe e é responsável por coletar as LRRs de fontes externas
 
 O fluxo de dados neste módulo é:
 
-Web Scraping: Captura de dados de sites externos.
-Validação: Verificação e correção dos dados coletados.
-Encoding: Conversão dos dados para o formato adequado para processamento.
+- Web Scraping: Captura de dados de sites externos.
+
+- Validação: Verificação e correção dos dados coletados.
+
+- Encoding: Conversão dos dados para o formato adequado para processamento.
 
 **2. Banco de dados**
 O módulo de banco de dados será aprimorado para rastrear e armazenar as alterações realizadas pelos usuários, como adição e remoção de tags. Essas mudanças permitirão que o sistema atualize o modelo de tagueamento e o PLN com base no feedback contínuo dos usuários.
@@ -51,22 +53,22 @@ O módulo de banco de dados será aprimorado para rastrear e armazenar as altera
 
 O módulo de tagueamento utiliza um LLM para ler as LRRs coletadas e gerar automaticamente as tags que melhor representam o conteúdo dos documentos. O módulo precisará ser atualizado para ter as seguintes funcionalidades:
 
-**A. Geração automática de tags**: O LLM continuará a gerar tags automaticamente, tentando representar os principais temas ou tópicos de uma LRR.
+ - Geração automática de tags: O LLM continuará a gerar tags automaticamente, tentando representar os principais temas ou tópicos de uma LRR.
 
-**B. Integração com tags manuais**: O sistema será aprimorado para aproveitar as tags já criadas pelos usuários, refinando o processo de tagueamento. Isso inclui tanto as tags que os usuários adicionaram quanto as que foram removidas ao longo do tempo. Tags frequentemente aceitas serão sugeridas como opções potenciais no processo de novo tagueamento, melhorando a precisão do LLM.
+- Integração com tags manuais: O sistema será aprimorado para aproveitar as tags já criadas pelos usuários, refinando o processo de tagueamento. Isso inclui tanto as tags que os usuários adicionaram quanto as que foram removidas ao longo do tempo. Tags frequentemente aceitas serão sugeridas como opções potenciais no processo de novo tagueamento, melhorando a precisão do LLM.
 
-**C. Ajuste dinâmico do modelo**: O módulo de tagueamento deve ser atualizado regularmente com base nas tags adicionadas ou removidas pelos usuários. Isso permitirá que o sistema identifique tags que foram mais removidas pelos usuários e ajuste o LLM para não priorizá-las nos tagueamento futuros.
+- Ajuste dinâmico do modelo: O módulo de tagueamento deve ser atualizado regularmente com base nas tags adicionadas ou removidas pelos usuários. Isso permitirá que o sistema identifique tags que foram mais removidas pelos usuários e ajuste o LLM para não priorizá-las nos tagueamento futuros.
 
 **4. Aprendizado Contínuo**
 Esse é o bloco em que o modelo BERT será atualizado regularmente, com base nas novas tags e alterações feitas pelos usuários. Com base nas tags adicionadas ou modificadas, serão geradas novos exemplos de frase, por meio de LLM, para a base de treinamento do modelo. 
 
 O processo de atualização ocorrerá de maneira recursiva:
 
- A. Quando um usuário adiciona uma nova tag a uma LRR, o sistema gera novas frases que representem exemplos de uso dessa tag.
+- Quando um usuário adiciona uma nova tag a uma LRR, o sistema gera novas frases que representem exemplos de uso dessa tag.
 
- B. Essas frases são incorporadas ao banco de dados de frases associadas ao modelo BERT, permitindo que ele reconheça novas intenções ou entidades nas consultas.
+- Essas frases são incorporadas ao banco de dados de frases associadas ao modelo BERT, permitindo que ele reconheça novas intenções ou entidades nas consultas.
 
- C. O modelo BERT será atualizado incrementalmente, evitando o retrabalho completo, mas ajustando-se às mudanças para melhorar continuamente a acurácia das consultas.
+- O modelo BERT será atualizado incrementalmente, evitando o retrabalho completo, mas ajustando-se às mudanças para melhorar continuamente a acurácia das consultas.
 
 **5. Processamento de Linguagem Natural (PLN): Classificação**
  O módulo de PLN e classificação é responsável por analisar e interpretar as LRRs e as consultas dos usuários. Ele utiliza o modelo BERT para identificar as intenções e entidades nas consultas e classificar as LRRs de acordo com as tags associadas.
