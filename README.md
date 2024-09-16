@@ -9,8 +9,11 @@
 O projeto CORA, desenvolvido para o Bank of America, visa a captação de LRRs (Leis, Regulamentos e Resoluções) para automatizar o acompanhamento das mudanças regulatórias brasileiras, proporcionando o monitoramento, classificação, exibição e pesquisa das informações.
 
 O projeto é dividido em 3 etapas:
+
 **1.** Coleta de LRRs com web scraping;
+
 **2.** Tagueamento das LRRs com LLM ( Large Language Model);
+
 **3.** Exibição e pesquisa por áudio ou texto através de PLN.
 
 Atualmente, o sistema enfrenta o desafio de não conseguir se manter atualizado com as novas informações que surgem diariamente. Dessa forma, ele rapidamente se torna obsoleto, pois não consegue se adaptar à dinâmica das novas informações em tempo real.
